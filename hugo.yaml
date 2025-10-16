@@ -57,14 +57,14 @@ params:
 
   label:
     text: "Blog Phan Trường Hân"
-    icon: /images/avatar.jpg
+    icon: /blog-handzvcl-laptrinhmang/images/avatar.jpg
     iconHeight: 35
 
   profileMode:
     enabled: true
     title: "Phan Trường Hân"
     subtitle: "Sinh viên Công Nghệ Thông Tin - Đại học Hutech."
-    imageUrl: "/images/avatar.jpg"
+    imageUrl: "/blog-handzvcl-laptrinhmang/images/avatar.jpg"
     imageWidth: 180
     imageHeight: 180
     imageTitle: "Phan Trường Hân"
