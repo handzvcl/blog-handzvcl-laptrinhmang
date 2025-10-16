@@ -1,4 +1,4 @@
-baseURL: "https://github.com/handzvcl/blog-handzvcl-laptrinhmang"
+baseURL: "/"
 title: "Blog Phan Trường Hân"
 languageCode: vi
 defaultContentLanguage: vi
@@ -21,6 +21,10 @@ params:
   description: "Chia sẻ Java, JavaScript và lập trình mạng."
   keywords: [Java, JavaScript, Networking, HTTP, Socket, Lập trình mạng]
   author: "Phan Hân"
+
+  # Disable schema.org JSON-LD
+  schema:
+    disableSchemaOrg: true
 
   images: ["/images/site-cover.png"]
 
