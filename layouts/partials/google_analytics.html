@@ -1,0 +1,7 @@
+{{- if not site.Params.analytics.google.SiteVerificationTag -}}
+{{- /* Google Analytics is not configured */ -}}
+{{- else -}}
+<!-- Google Analytics -->
+<meta name="google-site-verification" content="{{ site.Params.analytics.google.SiteVerificationTag }}" />
+{{- end -}}
+
