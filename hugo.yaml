@@ -1,0 +1,163 @@
+baseURL: "https://github.com/handzvcl/blog-handzvcl-laptrinhmang"
+title: "Blog Phan Trường Hân"
+languageCode: vi
+defaultContentLanguage: vi
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production
+  title: "Blog Phan Trường Hân"
+  description: "Chia sẻ Java, JavaScript và lập trình mạng."
+  keywords: [Java, JavaScript, Networking, HTTP, Socket, Lập trình mạng]
+  author: "Phan Hân"
+
+  images: ["/images/site-cover.png"]
+
+  defaultTheme: auto
+  disableThemeToggle: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: false
+
+  assets:
+    disableHLJS: false
+    disableFingerprinting: false
+    favicon: "/favicon.ico"
+    favicon16x16: "/favicon-16x16.png"
+    favicon32x32: "/favicon-32x32.png"
+    apple_touch_icon: "/apple-touch-icon.png"
+
+  label:
+    text: "Blog Phan Trường Hân"
+    icon: /images/avatar.jpg
+    iconHeight: 35
+
+  profileMode:
+    enabled: true
+    title: "Phan Trường Hân"
+    subtitle: "Sinh viên Công Nghệ Thông Tin - Đại học Hutech."
+    imageUrl: "/images/avatar.jpg"
+    imageWidth: 180
+    imageHeight: 180
+    imageTitle: "Phan Trường Hân"
+    buttons:
+      - name: Blog
+        url: /blog/
+      - name: Tags
+        url: /tags/
+      - name: Archive
+        url: /archives/
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/handzvcl"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/<id>"
+    - name: email
+      url: "mailto:<email>@example.com"
+    - name: rss
+      url: "/index.xml"
+
+  analytics:
+    google:
+      SiteVerificationTag: ""
+
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: false
+
+  editPost:
+    URL: "https://github.com/<username>/blog-lap-trinh-mang/tree/main/content"
+    Text: "Đề xuất thay đổi"
+    appendFilePath: true
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - identifier: home
+      name: Trang chủ
+      url: /
+      weight: 10
+    - identifier: blog
+      name: Blog
+      url: /blog/
+      weight: 20
+    - identifier: tags
+      name: Tags
+      url: /tags/
+      weight: 30
+    - identifier: archives
+      name: Archive
+      url: /archives/
+      weight: 40
+    - identifier: search
+      name: Tìm kiếm
+      url: /search/
+      weight: 50
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+taxonomies:
+  category: categories
+  tag: tags
+
+privacy:
+  vimeo:
+    disabled: false
+    simple: true
+
+  twitter:
+    disabled: false
+    enableDNT: true
+    simple: true
+
+  instagram:
+    disabled: false
+    simple: true
+
+  youtube:
+    disabled: false
+    privacyEnhanced: true
+
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
