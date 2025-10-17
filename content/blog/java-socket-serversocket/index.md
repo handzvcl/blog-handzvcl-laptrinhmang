@@ -1,12 +1,12 @@
 ---
 title: "Hiểu Socket và ServerSocket trong Java"
-date: 2025-10-03
+date: 2024-09-15
 draft: false
 tags: ["Java", "Networking", "Socket", "TCP"]
 categories: ["Java"]
 summary: "Giải thích cơ chế socket, vòng đời kết nối TCP, ví dụ server đơn giản với Socket và ServerSocket."
 cover:
-  image: "/images/covers/java-socket.png"
+  image: "/images/covers/java-socket-serversocket.jpg"
   alt: "Minh họa kết nối socket TCP"
   caption: "Socket/ServerSocket trong Java"
 ---

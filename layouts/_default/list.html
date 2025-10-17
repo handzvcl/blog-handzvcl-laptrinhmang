@@ -1,0 +1,308 @@
+{{ define "main" }}
+
+<!-- Blog Header -->
+<div class="blog-header-section">
+  <div class="container">
+    <h1 class="blog-main-title">{{ .Title }}</h1>
+    <p class="blog-description">{{ .Description | default .Summary }}</p>
+  </div>
+</div>
+
+<!-- Blog Posts Grid -->
+<div class="blog-content-section">
+  <div class="container">
+    {{- if .Pages }}
+    <div class="blog-posts-grid">
+      {{- range .Pages }}
+      <article class="blog-post-card">
+        <!-- Thumbnail -->
+        {{- if .Params.cover.image }}
+        <div class="blog-post-thumb">
+          <img src="{{ .Params.cover.image | replaceRE "^/" "" | absURL }}" alt="{{ .Title }}" loading="lazy" onerror="this.onerror=null;this.src='{{ ("images/covers/java-networking-overview.jpg" | absURL) }}';">
+        </div>
+        {{- else }}
+        <div class="blog-post-thumb blog-post-thumb-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        {{- end }}
+        
+        <!-- Content -->
+        <div class="blog-post-body">
+          <!-- Meta -->
+          <div class="blog-post-meta">
+            {{- if .Params.categories }}
+            <span class="blog-category">{{ index .Params.categories 0 }}</span>
+            {{- end }}
+            <span class="blog-date">{{ .Date.Format "Jan 02, 2006" }}</span>
+          </div>
+          
+          <!-- Title -->
+          <h2 class="blog-post-title">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h2>
+          
+          <!-- Summary -->
+          <p class="blog-post-summary">{{ .Summary | plainify | truncate 120 }}</p>
+          
+          <!-- Tags -->
+          {{- if .Params.tags }}
+          <div class="blog-post-tags">
+            {{- range first 3 .Params.tags }}
+            <span class="blog-tag">{{ . }}</span>
+            {{- end }}
+          </div>
+          {{- end }}
+        </div>
+      </article>
+      {{- end }}
+    </div>
+    {{- else }}
+    <div class="no-posts">
+      <p>Chưa có bài viết nào.</p>
+    </div>
+    {{- end }}
+  </div>
+</div>
+
+<style>
+/* Blog Header */
+.blog-header-section {
+  background: linear-gradient(135deg, #00d1b2 0%, #3273dc 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+  color: white;
+}
+
+.blog-main-title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.blog-description {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Blog Content */
+.blog-content-section {
+  padding: 80px 0;
+  background: #f5f7fa;
+  min-height: 60vh;
+}
+
+/* Blog Posts Grid */
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 32px;
+}
+
+/* Blog Post Card */
+.blog-post-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e8ecef;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.blog-post-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  border-color: #00d1b2;
+}
+
+/* Thumbnail */
+.blog-post-thumb {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #00d1b2 0%, #3273dc 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.blog-post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.blog-post-card:hover .blog-post-thumb img {
+  transform: scale(1.05);
+}
+
+.blog-post-thumb-placeholder {
+  background: linear-gradient(135deg, rgba(0, 209, 178, 0.1) 0%, rgba(50, 115, 220, 0.1) 100%);
+}
+
+.blog-post-thumb-placeholder svg {
+  width: 64px;
+  height: 64px;
+  stroke: #00d1b2;
+  stroke-width: 1.5;
+}
+
+/* Post Body */
+.blog-post-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Meta */
+.blog-post-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 0.875rem;
+}
+
+.blog-category {
+  background: rgba(0, 209, 178, 0.1);
+  color: #00d1b2;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.blog-date {
+  color: #95a5a6;
+  font-weight: 500;
+}
+
+/* Title */
+.blog-post-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.blog-post-title a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.blog-post-title a:hover {
+  color: #00d1b2;
+}
+
+/* Summary */
+.blog-post-summary {
+  color: #6c757d;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  flex: 1;
+  font-size: 0.9375rem;
+}
+
+/* Tags */
+.blog-post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.blog-tag {
+  background: #e8ecef;
+  color: #6c757d;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* No Posts */
+.no-posts {
+  text-align: center;
+  padding: 80px 20px;
+  color: #6c757d;
+  font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .blog-main-title {
+    font-size: 3.5rem;
+  }
+  
+  .blog-posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-header-section {
+    padding: 60px 0 40px;
+  }
+  
+  .blog-main-title {
+    font-size: 2.5rem;
+  }
+  
+  .blog-description {
+    font-size: 1rem;
+  }
+  
+  .blog-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .blog-content-section {
+    padding: 40px 0;
+  }
+}
+
+/* Dark Theme Support */
+[data-theme="dark"] .blog-content-section {
+  background: #1a202c;
+}
+
+[data-theme="dark"] .blog-post-card {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+[data-theme="dark"] .blog-post-title,
+[data-theme="dark"] .blog-post-title a {
+  color: #f7fafc;
+}
+
+[data-theme="dark"] .blog-post-summary {
+  color: #cbd5e0;
+}
+
+[data-theme="dark"] .blog-tag {
+  background: #374151;
+  color: #cbd5e0;
+}
+
+[data-theme="dark"] .blog-date {
+  color: #a0aec0;
+}
+</style>
+
+{{ end }}

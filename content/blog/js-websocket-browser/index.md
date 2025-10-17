@@ -1,12 +1,12 @@
 ---
 title: "WebSocket bằng JavaScript phía trình duyệt"
-date: 2025-10-11
+date: 2024-10-01
 draft: false
 tags: ["JavaScript", "WebSocket", "Real-time"]
 categories: ["JavaScript"]
 summary: "Tìm hiểu WebSocket API trong trình duyệt để xây dựng ứng dụng real-time với JavaScript."
 cover:
-  image: "/images/covers/js-websocket.png"
+  image: "/images/covers/js-websocket-browser.jpg"
   alt: "WebSocket trong JavaScript"
   caption: "WebSocket - Real-time communication"
 ---

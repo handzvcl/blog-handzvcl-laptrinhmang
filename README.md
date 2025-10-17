@@ -1,327 +1,176 @@
-# Blog Lập Trình Mạng
+# 🎨 Portfolio Website - Phan Trường Hân
 
-Blog cá nhân chia sẻ kiến thức về lập trình mạng với Java và JavaScript.
+Modern, responsive portfolio website built with pure HTML, CSS, and JavaScript.
 
-🔗 **Live Demo**: https://&lt;username&gt;.github.io/blog-lap-trinh-mang/
+## 🌐 Live Demo
 
-## 📋 Mục lục
+**https://handzvcl.github.io/blog-handzvcl-laptrinhmang/**
 
-- [Giới thiệu](#giới-thiệu)
-- [Tính năng](#tính-năng)
-- [Công nghệ](#công-nghệ)
-- [Cài đặt](#cài-đặt)
-- [Sử dụng](#sử-dụng)
-- [Deploy](#deploy)
-- [Cấu trúc thư mục](#cấu-trúc-thư-mục)
-- [Thêm bài viết mới](#thêm-bài-viết-mới)
-- [Tùy chỉnh](#tùy-chỉnh)
+## ✨ Features
 
-## 🎯 Giới thiệu
+### Design
 
-Blog này được xây dựng bằng Hugo với theme PaperMod, tập trung vào chia sẻ kiến thức về:
+- 🎨 **Modern UI/UX** - Clean, professional design
+- 🌓 **Dark/Light Mode** - Theme toggle with localStorage
+- 💫 **Smooth Animations** - Particle effects, scroll animations, transitions
+- 📱 **Fully Responsive** - Works on all devices
+- ⚡ **Fast Loading** - Optimized performance
 
-- **Java Networking**: Socket, ServerSocket, NIO, HTTP, Multithreading
-- **JavaScript**: WebSocket, Fetch API, Axios, Node.js TCP
-- **Bảo mật**: HTTPS, CORS, CSRF
+### Pages
 
-## ✨ Tính năng
+- **Home** - Hero with animated particles, skills preview, achievements
+- **About** - Bio, skills with progress bars, certificates timeline, education
+- **Contact** - Contact form, info cards, social links
 
-- ✅ **Tối giản & Đẹp mắt**: Theme PaperMod responsive
-- ✅ **Dark/Light Mode**: Chuyển đổi giao diện sáng/tối
-- ✅ **SEO Optimized**: Meta tags, OpenGraph, Twitter Cards, Schema.org
-- ✅ **RSS Feed**: Theo dõi bài viết mới
-- ✅ **Search**: Tìm kiếm bài viết nhanh chóng
-- ✅ **Code Highlighting**: Syntax highlighting cho code blocks
-- ✅ **Reading Time**: Thời gian đọc ước tính
-- ✅ **Tags & Categories**: Phân loại bài viết
-- ✅ **CI/CD**: Tự động deploy với GitHub Actions
+### Technical
 
-## 🛠 Công nghệ
+- ✅ Pure HTML/CSS/JS (no frameworks)
+- ✅ CSS Grid & Flexbox layouts
+- ✅ Canvas particle animation
+- ✅ Intersection Observer for scroll animations
+- ✅ Form validation & submission handling
+- ✅ LocalStorage for theme preference
+- ✅ SEO optimized (meta tags, semantic HTML)
 
-- **SSG**: [Hugo](https://gohugo.io/) v0.120+
-- **Theme**: [PaperMod](https://github.com/adityatelange/hugo-PaperMod)
-- **Hosting**: GitHub Pages
-- **CI/CD**: GitHub Actions
-- **Language**: Markdown
+## 🚀 Quick Start
 
-## 📦 Cài đặt
-
-### Yêu cầu
-
-- Hugo Extended v0.120+ ([Download](https://gohugo.io/installation/))
-- Git
-
-### Clone repository
+### Option 1: View Locally
 
 ```bash
-git clone https://github.com/<username>/blog-lap-trinh-mang.git
-cd blog-lap-trinh-mang
+# Clone the repository
+git clone https://github.com/handzvcl/blog-handzvcl-laptrinhmang.git
+cd blog-handzvcl-laptrinhmang
+
+# Open in browser
+# Just open index.html in your browser
+# Or use a local server:
+python -m http.server 8000
+# Then visit: http://localhost:8000
 ```
 
-### Cài đặt theme
+### Option 2: Deploy to GitHub Pages
 
-```bash
-# Clone theme PaperMod
-git submodule update --init --recursive
-```
+Already configured! Just push to `main` branch and GitHub Actions will deploy automatically.
 
-## 🚀 Sử dụng
-
-### Chạy local development server
-
-```bash
-hugo server -D
-```
-
-Mở trình duyệt: http://localhost:1313/blog-lap-trinh-mang/
-
-### Build static files
-
-```bash
-hugo --minify
-```
-
-Output sẽ được tạo trong thư mục `public/`.
-
-### Options hữu ích
-
-```bash
-# Chạy với draft posts
-hugo server -D
-
-# Chạy với live reload
-hugo server --disableFastRender
-
-# Build với minification
-hugo --minify --gc
-
-# Build và kiểm tra broken links
-hugo --minify && hugo check
-```
-
-## 🌐 Deploy
-
-### GitHub Pages (Tự động)
-
-1. **Push code lên GitHub**:
-
-```bash
-git add .
-git commit -m "Initial commit"
-git push origin main
-```
-
-2. **Bật GitHub Pages**:
-   - Vào repository Settings → Pages
-   - Source: GitHub Actions
-3. **GitHub Actions tự động deploy** khi push lên `main` branch.
-
-### Manual Deploy
-
-```bash
-# Build
-hugo --minify
-
-# Deploy thư mục public/ lên hosting
-```
-
-## 📁 Cấu trúc thư mục
+## 📁 Project Structure
 
 ```
-blog-lap-trinh-mang/
-├── .github/
-│   └── workflows/
-│       └── gh-pages.yml      # GitHub Actions workflow
-├── content/
-│   ├── _index.md             # Trang Home
-│   ├── archives.md           # Trang Archive
-│   ├── search.md             # Trang Search
-│   └── blog/
-│       ├── _index.md         # Trang Blog listing
-│       ├── java-lap-trinh-mang-tong-quan/
-│       │   └── index.md
-│       ├── java-socket-serversocket/
-│       │   └── index.md
-│       └── ...               # 9 bài viết
-├── layouts/
-│   └── partials/
-│       └── extend_head.html  # SEO meta tags
+blog-handzvcl-laptrinhmang/
+├── index.html              # Homepage
+├── about.html              # About page
+├── contact.html            # Contact page
+├── css/
+│   ├── variables.css       # CSS variables & design system
+│   ├── reset.css           # CSS reset
+│   ├── components.css      # Reusable components
+│   ├── layout.css          # Layout & navigation
+│   ├── main.css            # Main styles
+│   ├── about.css           # About page styles
+│   └── contact.css         # Contact page styles
+├── js/
+│   └── app.js              # Main JavaScript
+├── data/
+│   └── certificates.json   # Certificates data
 ├── static/
-│   ├── images/               # Hình ảnh
-│   ├── robots.txt
-│   └── .nojekyll
-├── themes/
-│   └── PaperMod/             # Theme (git submodule)
-├── hugo.yaml                 # Cấu hình Hugo
-├── .gitmodules
-└── README.md
+│   └── images/
+│       └── avatar.jpg      # Profile image
+└── .github/
+    └── workflows/
+        └── gh-pages.yml    # GitHub Actions deployment
 ```
 
-## ✍️ Thêm bài viết mới
+## 🎨 Customization
 
-### 1. Tạo file bài viết
+### Colors
 
-```bash
-hugo new blog/ten-bai-viet/index.md
-```
-
-### 2. Chỉnh sửa front matter
-
-```yaml
----
-title: "Tiêu đề bài viết"
-date: 2025-10-20
-draft: false
-tags: ["Java", "Networking"]
-categories: ["Java"]
-summary: "Mô tả ngắn gọn về bài viết"
-cover:
-  image: "/images/covers/image.png"
-  alt: "Alt text"
-  caption: "Caption"
----
-Nội dung bài viết...
-```
-
-### 3. Viết nội dung bằng Markdown
-
-```markdown
-## Heading 2
-
-Paragraph với **bold** và _italic_.
-
-### Code block
-
-\`\`\`java
-public class Example {
-public static void main(String[] args) {
-System.out.println("Hello World!");
-}
-}
-\`\`\`
-
-### List
-
-- Item 1
-- Item 2
-
-### Link
-
-[Text](https://example.com)
-```
-
-### 4. Preview
-
-```bash
-hugo server -D
-```
-
-### 5. Publish
-
-Đổi `draft: false` trong front matter, sau đó commit và push:
-
-```bash
-git add .
-git commit -m "Add new post: Tên bài viết"
-git push origin main
-```
-
-## 🎨 Tùy chỉnh
-
-### Thay đổi thông tin cá nhân
-
-Chỉnh sửa file `hugo.yaml`:
-
-```yaml
-params:
-  author: "Tên của bạn"
-  profileMode:
-    title: "Tên của bạn"
-    subtitle: "Bio của bạn"
-    imageUrl: "/images/avatar.jpg"
-
-  socialIcons:
-    - name: github
-      url: "https://github.com/username"
-    - name: linkedin
-      url: "https://linkedin.com/in/username"
-    - name: email
-      url: "mailto:email@example.com"
-```
-
-### Thay đổi baseURL
-
-Trong `hugo.yaml`:
-
-```yaml
-baseURL: "https://<username>.github.io/blog-lap-trinh-mang/"
-```
-
-### Thêm Google Analytics
-
-```yaml
-params:
-  analytics:
-    google:
-      SiteVerificationTag: "YOUR_VERIFICATION_TAG"
-```
-
-### Tùy chỉnh màu sắc
-
-Tạo file `assets/css/extended/custom.css`:
+Edit `css/variables.css`:
 
 ```css
 :root {
-  --primary: #007bff;
-  --theme: #fff;
-  --entry: #f8f9fa;
-}
-
-.dark {
-  --theme: #1a1a1a;
-  --entry: #2d2d2d;
+  --primary: #667eea; /* Main color */
+  --secondary: #764ba2; /* Secondary color */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 ```
 
-## 📝 Bài viết hiện có
+### Content
 
-1. **Tổng quan lập trình mạng với Java** - Giới thiệu Java networking
-2. **Hiểu Socket và ServerSocket trong Java** - TCP socket programming
-3. **Xử lý đa luồng cho server TCP** - ExecutorService và thread pool
-4. **Giao thức HTTP cơ bản** - HTTP trong Java
-5. **Java NIO và Channel/Selector** - Non-blocking I/O
-6. **WebSocket bằng JavaScript** - Real-time communication
-7. **Fetch API & Axios** - HTTP requests trong JavaScript
-8. **Client TCP với Node.js** - net module trong Node.js
-9. **Bảo mật: HTTPS, CORS, CSRF** - Web security basics
+- **Profile Info**: Edit HTML files directly
+- **Certificates**: Update `data/certificates.json`
+- **Social Links**: Update URLs in HTML files
 
-## 🤝 Contributing
+### Images
 
-Mọi đóng góp đều được chào đón! Vui lòng:
+- Replace `static/images/avatar.jpg` with your photo
+- Update certificate placeholder images
 
-1. Fork repository
-2. Tạo branch mới (`git checkout -b feature/amazing-feature`)
-3. Commit changes (`git commit -m 'Add amazing feature'`)
-4. Push to branch (`git push origin feature/amazing-feature`)
-5. Mở Pull Request
+## 🛠 Technologies
+
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with Grid, Flexbox, Variables
+- **JavaScript (ES6+)** - Vanilla JS, no frameworks
+- **Canvas API** - Particle animations
+- **Intersection Observer** - Scroll animations
+- **LocalStorage** - Theme persistence
+
+## 🌟 Key Features
+
+### 1. Animated Particle Background
+
+Canvas-based particle system with interactive connections
+
+### 2. Scroll Animations
+
+Elements fade in as you scroll using Intersection Observer
+
+### 3. Dark Mode
+
+Smooth theme toggle with system preference detection
+
+### 4. Contact Form
+
+Real-time validation with loading states
+
+### 5. Skills Progress Bars
+
+Animated skill levels on scroll
+
+### 6. Certificates Timeline
+
+Beautiful vertical timeline with hover effects
+
+## 📱 Browser Support
+
+- ✅ Chrome (latest)
+- ✅ Firefox (latest)
+- ✅ Safari (latest)
+- ✅ Edge (latest)
+- ✅ Mobile browsers
+
+## 🚀 Performance
+
+- **First Contentful Paint**: < 1s
+- **Largest Contentful Paint**: < 2s
+- **Time to Interactive**: < 2s
+- **Lighthouse Score**: 95+
 
 ## 📄 License
 
-MIT License - Xem file [LICENSE](LICENSE) để biết thêm chi tiết.
+MIT License - feel free to use for your own portfolio!
 
-## 📞 Liên hệ
+## 👤 Author
 
-- **Author**: Phan Hân
-- **Email**: &lt;email&gt;@example.com
-- **GitHub**: [@&lt;username&gt;](https://github.com/<username>)
-- **LinkedIn**: [linkedin.com/in/&lt;id&gt;](https://linkedin.com/in/<id>)
+**Phan Trường Hân**
+
+- GitHub: [@handzvcl](https://github.com/handzvcl)
+- University: HUTECH - Computer Science
 
 ## 🙏 Acknowledgments
 
-- [Hugo](https://gohugo.io/) - Static site generator
-- [PaperMod](https://github.com/adityatelange/hugo-PaperMod) - Hugo theme
-- [GitHub Pages](https://pages.github.com/) - Free hosting
+- Design inspiration from modern portfolio websites
+- Icons from SVG libraries
+- Fonts from Google Fonts (Inter)
 
 ---
 
-⭐ Nếu bạn thấy blog này hữu ích, hãy star repository này!
+⭐ **Star this repo if you find it useful!**

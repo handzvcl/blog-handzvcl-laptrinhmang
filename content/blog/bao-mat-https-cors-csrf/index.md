@@ -1,12 +1,12 @@
 ---
 title: "Bảo mật cơ bản: HTTPS, CORS, CSRF cho lập trình mạng"
-date: 2025-10-16
+date: 2024-10-14
 draft: false
 tags: ["Security", "HTTPS", "CORS", "CSRF", "Networking"]
 categories: ["Java", "JavaScript"]
 summary: "Tìm hiểu các khái niệm bảo mật quan trọng: HTTPS, CORS, CSRF và cách áp dụng trong lập trình mạng."
 cover:
-  image: "/images/covers/web-security.png"
+  image: "/images/covers/security-https-cors-csrf.jpg"
   alt: "Web security concepts"
   caption: "HTTPS, CORS, CSRF - Bảo mật web"
 ---

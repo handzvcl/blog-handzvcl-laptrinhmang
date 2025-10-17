@@ -1,0 +1,229 @@
+/* ================================================
+   MAIN CSS - Page-specific Styles & Utilities
+   ================================================ */
+
+/* Smooth Scroll */
+html {
+  scroll-padding-top: 90px;
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
+/* Post Content Styling */
+.post-content {
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+  color: var(--text-primary);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+  font-weight: var(--font-bold);
+}
+
+.post-content h2 {
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--primary);
+}
+
+.post-content p {
+  margin-bottom: var(--space-5);
+}
+
+.post-content a {
+  color: var(--primary);
+  font-weight: var(--font-medium);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 209, 178, 0.3);
+}
+
+.post-content a:hover {
+  text-decoration-color: var(--primary);
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.post-content ul {
+  list-style: disc;
+}
+
+.post-content ol {
+  list-style: decimal;
+}
+
+.post-content li {
+  margin-bottom: var(--space-2);
+  color: var(--text-secondary);
+}
+
+.post-content code {
+  background: var(--bg-secondary);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--danger);
+}
+
+.post-content pre {
+  background: var(--bg-secondary);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  overflow-x: auto;
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--border-color);
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+.post-content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: var(--space-5);
+  margin: var(--space-6) 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.post-content img {
+  border-radius: var(--radius-lg);
+  margin: var(--space-6) 0;
+  box-shadow: var(--shadow-md);
+}
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+}
+
+.post-content th,
+.post-content td {
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.post-content th {
+  background: var(--bg-secondary);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+/* Utility Classes */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--text-primary) !important; }
+.text-secondary { color: var(--text-secondary) !important; }
+.text-accent { color: var(--primary) !important; }
+
+.bg-primary { background: var(--bg-primary) !important; }
+.bg-secondary { background: var(--bg-secondary) !important; }
+
+.mt-0 { margin-top: 0 !important; }
+.mt-4 { margin-top: var(--space-4) !important; }
+.mt-8 { margin-top: var(--space-8) !important; }
+.mt-12 { margin-top: var(--space-12) !important; }
+
+.mb-0 { margin-bottom: 0 !important; }
+.mb-4 { margin-bottom: var(--space-4) !important; }
+.mb-8 { margin-bottom: var(--space-8) !important; }
+.mb-12 { margin-bottom: var(--space-12) !important; }
+
+.hidden { display: none !important; }
+.visible { display: block !important; }
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scroll Reveal */
+[data-scroll] {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-scroll].revealed {
+  opacity: 1;
+}
+
+[data-scroll="fade"] {
+  transform: translateY(30px);
+}
+
+[data-scroll="fade"].revealed {
+  transform: translateY(0);
+}
+

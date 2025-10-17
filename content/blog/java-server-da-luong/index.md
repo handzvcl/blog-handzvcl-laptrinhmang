@@ -1,12 +1,12 @@
 ---
 title: "Xử lý đa luồng cho server TCP với ExecutorService"
-date: 2025-10-05
+date: 2024-09-28
 draft: false
 tags: ["Java", "Networking", "Concurrency", "ExecutorService"]
 categories: ["Java"]
 summary: "Cách xây dựng server TCP xử lý nhiều client đồng thời bằng multithreading và ExecutorService."
 cover:
-  image: "/images/covers/java-multithreading.png"
+  image: "/images/covers/java-multithreading-server.jpg"
   alt: "Multithreading server Java"
   caption: "Server đa luồng với ExecutorService"
 ---

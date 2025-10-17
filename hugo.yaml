@@ -1,5 +1,5 @@
 baseURL: "https://handzvcl.github.io/blog-handzvcl-laptrinhmang/"
-title: "Blog Phan Trường Hân"
+title: "Phan Trường Hân"
 languageCode: vi
 defaultContentLanguage: vi
 theme: PaperMod
@@ -17,8 +17,8 @@ minify:
 
 params:
   env: production
-  title: "Blog Phan Trường Hân"
-  description: "Chia sẻ Java, JavaScript và lập trình mạng."
+  title: "Handz"
+  description: "Đam mê lập trình."
   keywords: [Java, JavaScript, Networking, HTTP, Socket, Lập trình mạng]
   author: "Phan Hân"
 
@@ -56,35 +56,33 @@ params:
     apple_touch_icon: "/apple-touch-icon.png"
 
   label:
-    text: "Blog Phan Trường Hân"
+    text: "Handz"
     icon: /blog-handzvcl-laptrinhmang/images/avatar.jpg
     iconHeight: 35
 
   profileMode:
     enabled: true
     title: "Phan Trường Hân"
-    subtitle: "Sinh viên Công Nghệ Thông Tin - Đại học Hutech."
+    subtitle: "Information Technology Student"
     imageUrl: "/blog-handzvcl-laptrinhmang/images/avatar.jpg"
     imageWidth: 180
     imageHeight: 180
     imageTitle: "Phan Trường Hân"
     buttons:
       - name: Blog
-        url: /blog/
-      - name: Tags
-        url: /tags/
-      - name: Archive
-        url: /archives/
+        url: /blog-handzvcl-laptrinhmang/blog/
+      - name: About Me
+        url: /blog-handzvcl-laptrinhmang/about/
+      - name: Contact
+        url: /blog-handzvcl-laptrinhmang/contact/
 
   socialIcons:
     - name: github
       url: "https://github.com/handzvcl"
-    - name: linkedin
-      url: "https://www.linkedin.com/in/<id>"
-    - name: email
-      url: "mailto:<email>@example.com"
-    - name: rss
-      url: "/index.xml"
+    - name: facebook
+      url: "https://facebook.com/100024092942208"
+    - name: instagram
+      url: "https://instagram.com/truonghan_"
 
   analytics:
     google:
@@ -96,7 +94,7 @@ params:
     hiddenInSingle: false
 
   editPost:
-    URL: "https://github.com/<username>/blog-lap-trinh-mang/tree/main/content"
+    URL: "https://github.com/handzvcl/blog-handzvcl-laptrinhmang/tree/main/content"
     Text: "Đề xuất thay đổi"
     appendFilePath: true
 
@@ -112,31 +110,26 @@ params:
 menu:
   main:
     - identifier: home
-      name: Trang chủ
+      name: Home
       url: /
       weight: 10
     - identifier: blog
       name: Blog
       url: /blog/
       weight: 20
-    - identifier: tags
-      name: Tags
-      url: /tags/
+    - identifier: about
+      name: About
+      url: /about/
       weight: 30
-    - identifier: archives
-      name: Archive
-      url: /archives/
+    - identifier: contact
+      name: Contact
+      url: /contact/
       weight: 40
-    - identifier: search
-      name: Tìm kiếm
-      url: /search/
-      weight: 50
 
 outputs:
   home:
     - HTML
     - RSS
-    - JSON
 
 taxonomies:
   category: categories
@@ -147,7 +140,7 @@ privacy:
     disabled: false
     simple: true
 
-  twitter:
+  x:
     disabled: false
     enableDNT: true
     simple: true
@@ -163,5 +156,8 @@ privacy:
 services:
   instagram:
     disableInlineCSS: true
-  twitter:
+  x:
     disableInlineCSS: true
+
+# Ignore deprecation warnings
+ignoreLogs: ["warning-goldmark-raw-html"]
