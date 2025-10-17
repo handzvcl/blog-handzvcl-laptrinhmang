@@ -1,12 +1,12 @@
 ---
 title: "Xây dựng client TCP nhỏ bằng Node.js (net module)"
-date: 2025-10-15
+date: 2024-10-12
 draft: false
 tags: ["JavaScript", "Node.js", "TCP", "Networking"]
 categories: ["JavaScript"]
 summary: "Học cách sử dụng net module trong Node.js để tạo TCP client và server."
 cover:
-  image: "/images/covers/nodejs-tcp.png"
+  image: "/images/covers/js-node-tcp-client.jpg"
   alt: "Node.js TCP networking"
   caption: "TCP trong Node.js"
 ---

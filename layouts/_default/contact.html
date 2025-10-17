@@ -1,0 +1,481 @@
+{{ define "main" }}
+
+<!-- Contact Hero -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="contact-hero-content">
+      <h1 class="contact-title">Contact Me</h1>
+      <p class="contact-subtitle">Feel free to reach out, explore opportunities or just have a friendly chat.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Content -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid-main">
+      <!-- Contact Info Cards -->
+      <div class="contact-info-section">
+        <!-- Email Card -->
+        <div class="contact-card" data-scroll="fade">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <h3>Email</h3>
+          <a href="mailto:phanhan@example.com" class="contact-link">phanhan@example.com</a>
+        </div>
+        
+        <!-- Location Card -->
+        <div class="contact-card" data-scroll="fade">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <h3>Location</h3>
+          <p class="contact-text">TP. Hồ Chí Minh, Việt Nam</p>
+        </div>
+        
+        <!-- Social Media -->
+        <div class="contact-social-section" data-scroll="fade">
+          <h3 class="contact-social-title">Social Media</h3>
+          <div class="contact-social-grid">
+            <a href="https://github.com/handzvcl" class="contact-social-card" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            
+            <a href="https://facebook.com/handzvcl" class="contact-social-card" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              <span>Facebook</span>
+            </a>
+            
+            <a href="https://instagram.com/handzvcl" class="contact-social-card" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/>
+              </svg>
+              <span>Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Contact Form Section -->
+      <div class="contact-form-section">
+        <div class="contact-form-card" data-scroll="fade">
+          <h2 class="form-title">Send Me a Message</h2>
+          <p class="form-description">Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.</p>
+          
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Your message here..." required></textarea>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-lg btn-block">
+              <span class="btn-text">Send Message</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <line x1="22" y1="2" x2="11" y2="13"/>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+            
+            <div class="form-message hidden" id="form-message"></div>
+          </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Contact Hero */
+.contact-hero {
+  background: #2b2d42;
+  padding: var(--space-24) 0 var(--space-20);
+  text-align: center;
+  color: white;
+}
+
+.contact-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: var(--text-6xl);
+  font-weight: var(--font-black);
+  margin-bottom: var(--space-4);
+  color: white;
+}
+
+.contact-subtitle {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.7;
+}
+
+/* Contact Grid */
+.contact-grid-main {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact-section-title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+/* Contact Cards */
+.contact-card {
+  background: var(--bg-card);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-all);
+}
+
+.contact-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: var(--primary);
+}
+
+.contact-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-4);
+}
+
+.contact-icon svg {
+  width: 28px;
+  height: 28px;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.contact-card h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.contact-link {
+  display: block;
+  color: var(--primary);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+  transition: var(--transition-base);
+}
+
+.contact-link:hover {
+  color: var(--primary-dark);
+}
+
+.contact-note,
+.contact-text {
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  margin: var(--space-1) 0;
+}
+
+.contact-highlight {
+  color: var(--primary);
+  font-weight: var(--font-bold);
+  font-size: var(--text-2xl);
+}
+
+/* Social Cards */
+.contact-social-section {
+  background: var(--bg-secondary);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+}
+
+.contact-social-title {
+  font-size: var(--text-lg);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+  text-align: center;
+}
+
+.contact-social-grid {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.contact-social-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-all);
+  color: var(--text-primary);
+  font-weight: var(--font-medium);
+}
+
+.contact-social-card:hover {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  transform: translateX(4px);
+}
+
+.contact-social-card svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.contact-social-card:hover svg {
+  fill: white;
+}
+
+/* Contact Form Section */
+.contact-form-card {
+  background: var(--bg-card);
+  padding: var(--space-10);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-color);
+}
+
+.form-title {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.form-description {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: var(--space-8);
+}
+
+/* Form Elements */
+.contact-form .form-group {
+  margin-bottom: var(--space-5);
+}
+
+.contact-form label {
+  display: block;
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: var(--space-4);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  transition: var(--transition-all);
+  font-family: var(--font-family);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.1);
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.btn-block {
+  width: 100%;
+  justify-content: center;
+}
+
+.btn-icon {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.form-message {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  font-weight: var(--font-medium);
+}
+
+.form-message.success {
+  background: rgba(72, 199, 116, 0.1);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.form-message.error {
+  background: rgba(241, 70, 104, 0.1);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+/* Collaboration Card */
+.collaboration-card {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  color: white;
+  margin-top: var(--space-6);
+}
+
+.collaboration-card h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-6);
+  color: white;
+}
+
+.opportunity-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.opportunity-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: white;
+  font-size: var(--text-base);
+}
+
+.opportunity-list svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+  stroke-width: 2.5;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .contact-grid-main {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  
+  .contact-title {
+    font-size: var(--text-5xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero {
+    padding: var(--space-16) 0 var(--space-12);
+  }
+  
+  .contact-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .contact-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .contact-form-card {
+    padding: var(--space-6);
+  }
+}
+</style>
+
+<script>
+// Contact Form Handling
+document.getElementById('contact-form')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const form = this;
+  const btnText = form.querySelector('.btn-text');
+  const formMessage = document.getElementById('form-message');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  
+  // Show loading
+  btnText.textContent = 'Sending...';
+  submitBtn.disabled = true;
+  
+  // Simulate form submission (replace with actual API)
+  setTimeout(() => {
+    formMessage.textContent = 'Cảm ơn bạn! Tin nhắn đã được gửi. Tôi sẽ phản hồi trong 24-48 giờ.';
+    formMessage.className = 'form-message success';
+    formMessage.classList.remove('hidden');
+    
+    form.reset();
+    btnText.textContent = 'Send Message';
+    submitBtn.disabled = false;
+    
+    // Hide message after 5 seconds
+    setTimeout(() => {
+      formMessage.classList.add('hidden');
+    }, 5000);
+  }, 1500);
+});
+</script>
+
+{{ end }}
+

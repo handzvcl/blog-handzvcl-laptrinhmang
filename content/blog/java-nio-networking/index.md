@@ -1,12 +1,12 @@
 ---
 title: "Java NIO và Channel/Selector trong ứng dụng mạng"
-date: 2025-10-09
+date: 2024-10-05
 draft: false
 tags: ["Java", "NIO", "Networking", "Performance"]
 categories: ["Java"]
 summary: "Tìm hiểu Java NIO (Non-blocking I/O) với Channel, Buffer và Selector để xây dựng server hiệu năng cao."
 cover:
-  image: "/images/covers/java-nio.png"
+  image: "/images/covers/java-nio-networking.jpg"
   alt: "Java NIO networking"
   caption: "Java NIO - Non-blocking I/O"
 ---

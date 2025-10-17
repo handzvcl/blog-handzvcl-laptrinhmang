@@ -1,12 +1,12 @@
 ---
 title: "Fetch API & Axios: gọi API hiệu quả"
-date: 2025-10-13
+date: 2024-10-08
 draft: false
 tags: ["JavaScript", "HTTP", "API", "Fetch", "Axios"]
 categories: ["JavaScript"]
 summary: "So sánh Fetch API và Axios, hai cách phổ biến nhất để gọi HTTP API trong JavaScript."
 cover:
-  image: "/images/covers/js-fetch-axios.png"
+  image: "/images/covers/js-fetch-axios-api.jpg"
   alt: "Fetch API và Axios"
   caption: "HTTP requests trong JavaScript"
 ---

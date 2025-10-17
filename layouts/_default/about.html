@@ -1,0 +1,625 @@
+{{ define "main" }}
+
+<!-- About Hero -->
+<section class="about-hero">
+  <div class="container">
+    <div class="about-hero-content">
+      <h1 class="about-title">About Me</h1>
+      <p class="about-subtitle">Computer Science Student passionate about Network Programming</p>
+    </div>
+  </div>
+</section>
+
+<!-- Bio Section -->
+<section class="section">
+  <div class="container">
+    <div class="bio-grid-about" data-scroll="fade">
+      <!-- Avatar & Stats -->
+      <div class="bio-sidebar">
+        <div class="bio-avatar-card">
+          <img src="{{ .Site.Params.profileMode.imageUrl | absURL }}" alt="{{ .Site.Params.profileMode.title }}" class="bio-avatar-img">
+          <h2 class="bio-name">{{ .Site.Params.profileMode.title }}</h2>
+          <p class="bio-role">{{ .Site.Params.profileMode.subtitle }}</p>
+        </div>
+        
+        <!-- Quick Stats -->
+        <div class="quick-stats">
+          <div class="quick-stat-item">
+            <span class="quick-stat-number">9+</span>
+            <span class="quick-stat-label">Projects</span>
+          </div>
+          <div class="quick-stat-item">
+            <span class="quick-stat-number">3</span>
+            <span class="quick-stat-label">Certificates</span>
+          </div>
+          <div class="quick-stat-item">
+            <span class="quick-stat-number">3+</span>
+            <span class="quick-stat-label">Years</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Bio Content -->
+      <div class="bio-main-content">
+        <div class="bio-intro">
+          <h2 class="section-heading">Introduction</h2>
+          <p class="bio-paragraph">
+            Xin chào! Tôi là <strong>Phan Trường Hân</strong>, sinh viên năm cuối ngành Công Nghệ Thông Tin tại Đại học Hutech. 
+            Tôi đam mê lập trình hệ thống và mạng máy tính, đặc biệt là các công nghệ liên quan đến socket programming, 
+            HTTP/HTTPS protocols, và real-time communications.
+          </p>
+          <p class="bio-paragraph">
+            Qua quá trình học tập và thực hành, tôi đã tích lũy được kiến thức vững chắc về Java và JavaScript, 
+            cùng với kinh nghiệm xây dựng các ứng dụng mạng từ cơ bản đến nâng cao.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title-center" data-scroll="fade">Technical Skills</h2>
+    
+    <div class="skills-columns">
+      <!-- Programming Languages -->
+      <div class="skill-column" data-scroll="fade">
+        <h3 class="skill-category-title">Programming Languages</h3>
+        
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Java</span>
+            <span class="skill-bar-percent">50%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="50"></div>
+          </div>
+        </div>
+        
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">JavaScript</span>
+            <span class="skill-bar-percent">60%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="60"></div>
+          </div>
+        </div>
+        
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Node.js</span>
+            <span class="skill-bar-percent">50%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="50"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Technologies -->
+      <div class="skill-column" data-scroll="fade">
+        <h3 class="skill-category-title">Technologies & Tools</h3>
+        
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">Socket Programming</span>
+            <span class="skill-bar-percent">55%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="55"></div>
+          </div>
+        </div>
+        
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">HTTP/HTTPS</span>
+            <span class="skill-bar-percent">65%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="65"></div>
+          </div>
+        </div>
+        
+        <div class="skill-bar-item">
+          <div class="skill-bar-header">
+            <span class="skill-bar-name">WebSocket</span>
+            <span class="skill-bar-percent">50%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" data-width="50"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Certificates Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title-center" data-scroll="fade">Certificates & Achievements</h2>
+    
+    <div class="certificates-timeline">
+      <!-- Java Certificate -->
+      <div class="cert-timeline-item" data-scroll="fade">
+        <div class="cert-timeline-marker"></div>
+        <div class="cert-timeline-content">
+          <div class="cert-year-badge">2025</div>
+          <h3>Network Basics Certificate</h3>
+          <p class="cert-issuer-name">Cisco Networking Academy</p>
+          <p class="cert-desc">Fundamental networking course covering IP addressing, OSI/TCP-IP models, routers, switches, and basic network protocols.</p>
+        </div>
+      </div>
+      
+      <!-- Network Certificate -->
+      <div class="cert-timeline-item" data-scroll="fade">
+        <div class="cert-timeline-marker"></div>
+        <div class="cert-timeline-content">
+          <div class="cert-year-badge">2025</div>
+          <h3>JavaScriptEssentials 1</h3>
+          <p class="cert-issuer-name">Cisco Networking Academy</p>
+          <p class="cert-desc">Introductory course to JavaScript covering basic syntax, variables, functions, and control structures.
+        </div>
+      </div>
+      
+      <!-- JavaScript Certificate -->
+      <div class="cert-timeline-item" data-scroll="fade">
+        <div class="cert-timeline-marker"></div>
+        <div class="cert-timeline-content">
+          <div class="cert-year-badge">2025</div>
+          <h3>JavaScriptEssentials 2</h3>
+          <p class="cert-issuer-name">freeCodeCamp</p>
+          <p class="cert-desc">Advanced JavaScript course focusing on OOP, error handling, asynchronous programming, and working with APIs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section class="section section-alt">
+  <div class="container">
+    <h2 class="section-title-center" data-scroll="fade">Education</h2>
+    
+    <div class="education-container">
+      <div class="education-card-large" data-scroll="fade">
+        <div class="education-header">
+          <div class="education-left">
+            <h3 class="education-degree">Bachelor of Computer Science</h3>
+            <p class="education-school">HUTECH University - Ho Chi Minh City</p>
+          </div>
+          <div class="education-year-badge">2022 - 2026</div>
+        </div>
+        
+        <div class="education-details">
+          <div class="education-detail-item">
+            <strong>Major:</strong> Software Engineering
+          </div>
+          <div class="education-detail-item">
+            <strong>GPA:</strong> 3.2/4.0
+          </div>
+          <div class="education-detail-item">
+            <strong>Focus:</strong> Web Development
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* About Hero */
+.about-hero {
+  background: #2b2d42;
+  padding: var(--space-24) 0 var(--space-20);
+  text-align: center;
+  color: white;
+}
+
+.about-hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: var(--text-6xl);
+  font-weight: var(--font-black);
+  margin-bottom: var(--space-4);
+  color: white;
+}
+
+.about-subtitle {
+  font-size: var(--text-xl);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Bio Grid */
+.bio-grid-about {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* Bio Sidebar */
+.bio-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.bio-avatar-card {
+  background: var(--bg-card);
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-color);
+  text-align: center;
+}
+
+.bio-avatar-img {
+  width: 200px;
+  height: 200px;
+  border-radius: var(--radius-full);
+  margin: 0 auto var(--space-6);
+  object-fit: cover;
+  border: 4px solid var(--primary);
+  box-shadow: var(--shadow-lg);
+}
+
+.bio-name {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.bio-role {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Quick Stats */
+.quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+  padding: var(--space-6);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+}
+
+.quick-stat-item {
+  text-align: center;
+}
+
+.quick-stat-number {
+  display: block;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-extrabold);
+  color: var(--primary);
+  margin-bottom: var(--space-1);
+}
+
+.quick-stat-label {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+}
+
+/* Bio Main Content */
+.bio-main-content {
+  background: var(--bg-card);
+  padding: var(--space-10);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+}
+
+.section-heading {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-3);
+  border-bottom: 3px solid var(--primary);
+  display: inline-block;
+}
+
+.bio-paragraph {
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-5);
+}
+
+/* Section Title Center */
+.section-title-center {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-extrabold);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+
+/* Skills Columns */
+.skills-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-12);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-column {
+  background: var(--bg-card);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.skill-category-title {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-6);
+  text-align: center;
+}
+
+.skill-bar-item {
+  margin-bottom: var(--space-5);
+}
+
+.skill-bar-item:last-child {
+  margin-bottom: 0;
+}
+
+.skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.skill-bar-name {
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+}
+
+.skill-bar-percent {
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--primary);
+}
+
+/* Certificates Timeline */
+.certificates-timeline {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: var(--space-10);
+}
+
+.certificates-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: var(--radius-full);
+}
+
+.cert-timeline-item {
+  position: relative;
+  margin-bottom: var(--space-12);
+}
+
+.cert-timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.cert-timeline-marker {
+  position: absolute;
+  left: calc(-1 * var(--space-10) - 8px);
+  top: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  background: var(--primary);
+  border: 4px solid var(--bg-primary);
+  box-shadow: 0 0 0 4px rgba(0, 209, 178, 0.2);
+  z-index: 1;
+}
+
+.cert-timeline-content {
+  background: var(--bg-card);
+  padding: var(--space-8);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: var(--transition-all);
+  position: relative;
+}
+
+.cert-timeline-content:hover {
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary);
+  transform: translateX(8px);
+}
+
+.cert-year-badge {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  background: var(--primary);
+  color: white;
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-3);
+}
+
+.cert-timeline-content h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.cert-issuer-name {
+  font-size: var(--text-base);
+  color: var(--primary);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-3);
+}
+
+.cert-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Education */
+.education-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.education-card-large {
+  background: var(--bg-card);
+  padding: var(--space-10);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  border-left: 5px solid var(--primary);
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  margin-bottom: var(--space-6);
+  gap: var(--space-4);
+}
+
+.education-degree {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.education-school {
+  font-size: var(--text-xl);
+  color: var(--primary);
+  font-weight: var(--font-semibold);
+}
+
+.education-year-badge {
+  padding: var(--space-2) var(--space-5);
+  background: rgba(0, 209, 178, 0.1);
+  color: var(--primary);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.education-details {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.education-detail-item {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.education-detail-item strong {
+  color: var(--text-primary);
+  font-weight: var(--font-semibold);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .bio-grid-about {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  
+  .bio-sidebar {
+    position: static;
+  }
+  
+  .skills-columns {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+  
+  .about-title {
+    font-size: var(--text-5xl);
+  }
+  
+  .education-header {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-hero {
+    padding: var(--space-16) 0 var(--space-12);
+  }
+  
+  .about-title {
+    font-size: var(--text-4xl);
+  }
+  
+  .about-subtitle {
+    font-size: var(--text-lg);
+  }
+  
+  .bio-avatar-img {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .quick-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+    padding: var(--space-4);
+  }
+  
+  .quick-stat-number {
+    font-size: var(--text-2xl);
+  }
+  
+  .bio-main-content {
+    padding: var(--space-6);
+  }
+  
+  .section-heading {
+    font-size: var(--text-2xl);
+  }
+  
+  .certificates-timeline {
+    padding-left: var(--space-8);
+  }
+  
+  .cert-timeline-marker {
+    left: calc(-1 * var(--space-8) - 7px);
+    width: 14px;
+    height: 14px;
+  }
+}
+</style>
+
+{{ end }}
+

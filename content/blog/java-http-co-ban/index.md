@@ -1,12 +1,12 @@
 ---
 title: "Giao thức HTTP cơ bản cho lập trình viên Java"
-date: 2025-10-07
+date: 2024-09-22
 draft: false
 tags: ["Java", "HTTP", "Networking", "REST"]
 categories: ["Java"]
 summary: "Tìm hiểu giao thức HTTP, cách gửi request và nhận response trong Java với HttpURLConnection và HttpClient."
 cover:
-  image: "/images/covers/java-http.png"
+  image: "/images/covers/java-http-basic.jpg"
   alt: "HTTP protocol in Java"
   caption: "HTTP trong Java"
 ---

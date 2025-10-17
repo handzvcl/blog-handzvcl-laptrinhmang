@@ -1,12 +1,12 @@
 ---
 title: "Tổng quan lập trình mạng với Java"
-date: 2025-10-01
+date: 2024-09-10
 draft: false
 tags: ["Java", "Networking", "Socket"]
 categories: ["Java"]
 summary: "Giới thiệu tổng quan về lập trình mạng trong Java, các khái niệm cơ bản và thư viện hỗ trợ."
 cover:
-  image: "/images/covers/java-networking-overview.png"
+  image: "/images/covers/java-networking-overview.jpg"
   alt: "Lập trình mạng Java"
   caption: "Tổng quan lập trình mạng với Java"
 ---

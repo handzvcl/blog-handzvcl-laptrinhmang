@@ -35,38 +35,3 @@
 {{ end }}
 {{ end }}
 
-<!-- Custom CSS for Avatar -->
-<style>
-  /* Make profile avatar perfectly round with shadow */
-  .profile .profile_inner img {
-    border-radius: 50% !important;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
-    object-fit: cover !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  }
-  
-  .profile .profile_inner img:hover {
-    transform: scale(1.05) !important;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2) !important;
-  }
-  
-  /* Make logo avatar round with border */
-  .logo img {
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    border: 2px solid var(--primary) !important;
-    transition: transform 0.2s ease !important;
-  }
-  
-  .logo img:hover {
-    transform: scale(1.1) !important;
-  }
-  
-  /* Ensure images maintain aspect ratio */
-  .logo a {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-  }
-</style>
-

@@ -31,6 +31,7 @@ Blog này là nơi tôi chia sẻ những kiến thức đã học và kinh nghi
 
 ### Liên hệ
 
-- 📧 Email: <email>@example.com
-- 💼 LinkedIn: [linkedin.com/in/<id>](https://www.linkedin.com/in/<id>)
-- 🐙 GitHub: [github.com/<username>](https://github.com/<username>)
+- 📧 Email: phanhan@example.com
+- 🐙 GitHub: [github.com/handzvcl](https://github.com/handzvcl)
+- 📘 Facebook: [facebook.com/handzvcl](https://facebook.com/handzvcl)
+- 📷 Instagram: [instagram.com/handzvcl](https://instagram.com/handzvcl)

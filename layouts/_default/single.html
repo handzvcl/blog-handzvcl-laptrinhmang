@@ -1,0 +1,103 @@
+{{ define "main" }}
+
+{{- if eq .Type "page" }}
+<!-- About/Contact Pages -->
+<article class="single-page">
+  <!-- Page Header -->
+  <header class="page-header section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; text-align: center;">
+    <div class="container">
+      <h1 style="font-size: var(--text-6xl); font-weight: var(--font-black); margin-bottom: var(--space-3);">{{ .Title }}</h1>
+      {{- if .Description }}
+      <p style="font-size: var(--text-xl); opacity: 0.95;">{{ .Description }}</p>
+      {{- end }}
+    </div>
+  </header>
+  
+  <!-- Page Content -->
+  <div class="section">
+    <div class="container container-narrow">
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+</article>
+
+{{- else }}
+<!-- Blog Post -->
+<article class="blog-post">
+  <!-- Post Header -->
+  <header class="post-header section" style="background: var(--bg-secondary); padding: var(--space-20) 0;">
+    <div class="container container-narrow">
+      <!-- Categories & Date -->
+      <div class="post-meta" style="justify-content: center; margin-bottom: var(--space-4);">
+        {{- if .Params.categories }}
+        <span class="post-category">{{ index .Params.categories 0 }}</span>
+        {{- end }}
+        <span class="post-date">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 16px; height: 16px; stroke-width: 2;">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          {{ .Date.Format "January 2, 2006" }}
+        </span>
+        {{- if .ReadingTime }}
+        <span style="color: var(--text-tertiary);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" style="width: 16px; height: 16px; stroke-width: 2;">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          {{ .ReadingTime }} min read
+        </span>
+        {{- end }}
+      </div>
+      
+      <!-- Title -->
+      <h1 style="font-size: var(--text-5xl); font-weight: var(--font-extrabold); color: var(--text-primary); text-align: center; margin-bottom: var(--space-4);">
+        {{ .Title }}
+      </h1>
+      
+      <!-- Tags -->
+      {{- if .Params.tags }}
+      <div class="tag-list" style="justify-content: center; margin-top: var(--space-6);">
+        {{- range .Params.tags }}
+        <span class="badge badge-primary">{{ . }}</span>
+        {{- end }}
+      </div>
+      {{- end }}
+    </div>
+  </header>
+  
+  <!-- Post Content -->
+  <div class="section">
+    <div class="container container-narrow">
+      <div class="post-content">
+        {{ .Content }}
+      </div>
+      
+      <!-- Post Navigation -->
+      {{- if or .NextInSection .PrevInSection }}
+      <nav class="post-navigation" style="margin-top: var(--space-16); padding-top: var(--space-8); border-top: 1px solid var(--border-color); display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-6);">
+        {{- if .PrevInSection }}
+        <a href="{{ .PrevInSection.Permalink }}" class="card card-hover-primary" style="text-decoration: none;">
+          <div style="font-size: var(--text-sm); color: var(--text-tertiary); margin-bottom: var(--space-2);">← Previous</div>
+          <div style="font-weight: var(--font-semibold); color: var(--text-primary);">{{ .PrevInSection.Title }}</div>
+        </a>
+        {{- else }}
+        <div></div>
+        {{- end }}
+        
+        {{- if .NextInSection }}
+        <a href="{{ .NextInSection.Permalink }}" class="card card-hover-primary" style="text-decoration: none; text-align: right;">
+          <div style="font-size: var(--text-sm); color: var(--text-tertiary); margin-bottom: var(--space-2);">Next →</div>
+          <div style="font-weight: var(--font-semibold); color: var(--text-primary);">{{ .NextInSection.Title }}</div>
+        </a>
+        {{- end }}
+      </nav>
+      {{- end }}
+    </div>
+  </div>
+</article>
+{{- end }}
+
+{{ end }}
+
