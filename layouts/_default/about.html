@@ -790,15 +790,13 @@
 </div>
 
 <script>
-console.log('Certificate popup script loaded');
 document.addEventListener('DOMContentLoaded', function() {
-  console.log('DOM Content Loaded - setting up certificate popup');
   const certImages = document.querySelectorAll('.cert-image');
   const modal = document.getElementById('certModal');
   const modalImage = document.getElementById('certModalImage');
   const modalTitle = document.getElementById('certModalTitle');
   const closeBtn = document.querySelector('.cert-modal-close');
-  
+
   // Handle image load/error for fallback text
   const allCertImages = document.querySelectorAll('.cert-image');
   allCertImages.forEach(function(img) {
@@ -815,46 +813,32 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  
+
   // Handle clickable certificate images
   const clickableImages = document.querySelectorAll('.cert-image-clickable');
-  console.log('Found clickable images:', clickableImages.length);
-  
-  if (clickableImages.length === 0) {
-    console.error('No clickable certificate images found!');
-  }
-  
+
   clickableImages.forEach(function(img, index) {
-    console.log(`Setting up click handler for image ${index + 1}:`, img);
     img.addEventListener('click', function(e) {
       e.preventDefault();
-      console.log('Certificate image clicked!', this);
       const fullSizeSrc = this.getAttribute('data-fullsize');
       const title = this.getAttribute('data-title');
-      
-      console.log('Full size src:', fullSizeSrc);
-      console.log('Title:', title);
-      console.log('Modal element:', modal);
-      
+
       if (fullSizeSrc && title && modal) {
         modalImage.src = fullSizeSrc;
         modalImage.alt = title;
         modalTitle.textContent = title;
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
-        console.log('Modal should be visible now');
-      } else {
-        console.error('Missing required elements:', { fullSizeSrc, title, modal });
       }
     });
   });
-  
+
   // Close modal when clicking close button
   closeBtn.addEventListener('click', function() {
     modal.style.display = 'none';
     document.body.style.overflow = 'auto';
   });
-  
+
   // Close modal when clicking outside the image
   modal.addEventListener('click', function(e) {
     if (e.target === modal) {
@@ -862,7 +846,7 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.style.overflow = 'auto';
     }
   });
-  
+
   // Close modal with Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && modal.style.display === 'block') {
