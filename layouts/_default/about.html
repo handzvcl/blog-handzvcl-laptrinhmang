@@ -143,36 +143,60 @@
     <h2 class="section-title-center" data-scroll="fade">Certificates & Achievements</h2>
     
     <div class="certificates-timeline">
-      <!-- Java Certificate -->
+      <!-- Network Basics Certificate -->
       <div class="cert-timeline-item" data-scroll="fade">
         <div class="cert-timeline-marker"></div>
         <div class="cert-timeline-content">
           <div class="cert-year-badge">2025</div>
-          <h3>Network Basics Certificate</h3>
-          <p class="cert-issuer-name">Cisco Networking Academy</p>
-          <p class="cert-desc">Fundamental networking course covering IP addressing, OSI/TCP-IP models, routers, switches, and basic network protocols.</p>
+          <div class="cert-content-grid">
+            <div class="cert-text-content">
+              <h3>Network Basics Certificate</h3>
+              <p class="cert-issuer-name">Cisco Networking Academy</p>
+              <p class="cert-desc">Fundamental networking course covering IP addressing, OSI/TCP-IP models, routers, switches, and basic network protocols.</p>
+            </div>
+            <div class="cert-image-content">
+              <img src="{{ .Site.BaseURL }}images/certificates/network-basics-cert.jpg" alt="Network Basics Certificate" class="cert-image cert-image-clickable" loading="lazy" onerror="this.onerror=null;this.src='{{ .Site.BaseURL }}images/covers/java-networking-overview.jpg';" data-fullsize="{{ .Site.BaseURL }}images/certificates/network-basics-cert.jpg" data-title="Network Basics Certificate">
+              <div class="cert-image-fallback">Network Basics Certificate</div>
+            </div>
+          </div>
         </div>
       </div>
       
-      <!-- Network Certificate -->
+      <!-- JavaScript Essentials 1 Certificate -->
       <div class="cert-timeline-item" data-scroll="fade">
         <div class="cert-timeline-marker"></div>
         <div class="cert-timeline-content">
           <div class="cert-year-badge">2025</div>
-          <h3>JavaScriptEssentials 1</h3>
-          <p class="cert-issuer-name">Cisco Networking Academy</p>
-          <p class="cert-desc">Introductory course to JavaScript covering basic syntax, variables, functions, and control structures.
+          <div class="cert-content-grid">
+            <div class="cert-text-content">
+              <h3>JavaScript Essentials 1</h3>
+              <p class="cert-issuer-name">Cisco Networking Academy</p>
+              <p class="cert-desc">Introductory course to JavaScript covering basic syntax, variables, functions, and control structures.</p>
+            </div>
+            <div class="cert-image-content">
+              <img src="{{ .Site.BaseURL }}images/certificates/javascript-essentials-1-cert.jpg" alt="JavaScript Essentials 1 Certificate" class="cert-image cert-image-clickable" loading="lazy" onerror="this.onerror=null;this.src='{{ .Site.BaseURL }}images/covers/js-fetch-axios-api.jpg';" data-fullsize="{{ .Site.BaseURL }}images/certificates/javascript-essentials-1-cert.jpg" data-title="JavaScript Essentials 1 Certificate">
+              <div class="cert-image-fallback">JavaScript Essentials 1</div>
+            </div>
+          </div>
         </div>
       </div>
       
-      <!-- JavaScript Certificate -->
+      <!-- JavaScript Essentials 2 Certificate -->
       <div class="cert-timeline-item" data-scroll="fade">
         <div class="cert-timeline-marker"></div>
         <div class="cert-timeline-content">
           <div class="cert-year-badge">2025</div>
-          <h3>JavaScriptEssentials 2</h3>
-          <p class="cert-issuer-name">freeCodeCamp</p>
-          <p class="cert-desc">Advanced JavaScript course focusing on OOP, error handling, asynchronous programming, and working with APIs.</p>
+          <div class="cert-content-grid">
+            <div class="cert-text-content">
+              <h3>JavaScript Essentials 2</h3>
+              <p class="cert-issuer-name">freeCodeCamp</p>
+              <p class="cert-desc">Advanced JavaScript course focusing on OOP, error handling, asynchronous programming, and working with APIs.</p>
+            </div>
+            <div class="cert-image-content">
+              <img src="{{ .Site.BaseURL }}images/certificates/javascript-essentials-2-cert.jpg" alt="JavaScript Essentials 2 Certificate" class="cert-image cert-image-clickable" loading="lazy" onerror="this.onerror=null;this.src='{{ .Site.BaseURL }}images/covers/js-websocket-browser.jpg';" data-fullsize="{{ .Site.BaseURL }}images/certificates/javascript-essentials-2-cert.jpg" data-title="JavaScript Essentials 2 Certificate">
+              <div class="cert-image-fallback">JavaScript Essentials 2</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -455,6 +479,131 @@
   transform: translateX(8px);
 }
 
+/* Certificate Content Grid */
+.cert-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 200px;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.cert-text-content {
+  flex: 1;
+}
+
+.cert-image-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  border: 2px dashed var(--border-color);
+  position: relative;
+}
+
+.cert-image {
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--border-color);
+  transition: var(--transition-all);
+  display: block;
+  background: var(--bg-secondary);
+}
+
+.cert-image:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.cert-image-fallback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  text-align: center;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Certificate Image Popup Modal */
+.cert-image-clickable {
+  cursor: pointer !important;
+  position: relative;
+  z-index: 1;
+}
+
+.cert-image-clickable:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary);
+}
+
+.cert-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.cert-modal-content {
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.cert-modal-image {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  object-fit: contain;
+}
+
+.cert-modal-title {
+  color: white;
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.cert-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition-all);
+}
+
+.cert-modal-close:hover,
+.cert-modal-close:focus {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* JavaScript will handle hiding fallback text when images load */
+
 .cert-year-badge {
   display: inline-block;
   padding: var(--space-2) var(--space-4);
@@ -618,8 +767,111 @@
     width: 14px;
     height: 14px;
   }
+  
+  .cert-content-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+  
+  .cert-image {
+    width: 150px;
+    height: 100px;
+  }
 }
 </style>
+
+<!-- Certificate Modal Popup -->
+<div id="certModal" class="cert-modal">
+  <div class="cert-modal-content">
+    <span class="cert-modal-close">&times;</span>
+    <img id="certModalImage" class="cert-modal-image" src="" alt="">
+    <div id="certModalTitle" class="cert-modal-title"></div>
+  </div>
+</div>
+
+<script>
+console.log('Certificate popup script loaded');
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM Content Loaded - setting up certificate popup');
+  const certImages = document.querySelectorAll('.cert-image');
+  const modal = document.getElementById('certModal');
+  const modalImage = document.getElementById('certModalImage');
+  const modalTitle = document.getElementById('certModalTitle');
+  const closeBtn = document.querySelector('.cert-modal-close');
+  
+  // Handle image load/error for fallback text
+  const allCertImages = document.querySelectorAll('.cert-image');
+  allCertImages.forEach(function(img) {
+    img.addEventListener('load', function() {
+      const fallback = this.parentElement.querySelector('.cert-image-fallback');
+      if (fallback) {
+        fallback.style.display = 'none';
+      }
+    });
+    img.addEventListener('error', function() {
+      const fallback = this.parentElement.querySelector('.cert-image-fallback');
+      if (fallback) {
+        fallback.style.display = 'block';
+      }
+    });
+  });
+  
+  // Handle clickable certificate images
+  const clickableImages = document.querySelectorAll('.cert-image-clickable');
+  console.log('Found clickable images:', clickableImages.length);
+  
+  if (clickableImages.length === 0) {
+    console.error('No clickable certificate images found!');
+  }
+  
+  clickableImages.forEach(function(img, index) {
+    console.log(`Setting up click handler for image ${index + 1}:`, img);
+    img.addEventListener('click', function(e) {
+      e.preventDefault();
+      console.log('Certificate image clicked!', this);
+      const fullSizeSrc = this.getAttribute('data-fullsize');
+      const title = this.getAttribute('data-title');
+      
+      console.log('Full size src:', fullSizeSrc);
+      console.log('Title:', title);
+      console.log('Modal element:', modal);
+      
+      if (fullSizeSrc && title && modal) {
+        modalImage.src = fullSizeSrc;
+        modalImage.alt = title;
+        modalTitle.textContent = title;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        console.log('Modal should be visible now');
+      } else {
+        console.error('Missing required elements:', { fullSizeSrc, title, modal });
+      }
+    });
+  });
+  
+  // Close modal when clicking close button
+  closeBtn.addEventListener('click', function() {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+  
+  // Close modal when clicking outside the image
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+  
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.style.display === 'block') {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+</script>
 
 {{ end }}
 

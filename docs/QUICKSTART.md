@@ -6,8 +6,8 @@ Hướng dẫn nhanh để khởi động blog trong 5 phút!
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/<username>/blog-lap-trinh-mang.git
-cd blog-lap-trinh-mang
+git clone https://github.com/handzvcl/blog-handzvcl-laptrinhmang.git
+cd blog-handzvcl-laptrinhmang
 
 # 2. Clone theme
 git submodule update --init --recursive
@@ -16,7 +16,7 @@ git submodule update --init --recursive
 hugo server -D
 
 # 4. Mở browser
-# http://localhost:1313/blog-lap-trinh-mang/
+# http://localhost:1313/
 ```
 
 ## ✏️ Thêm bài viết nhanh
@@ -46,17 +46,17 @@ git push
 ## 🌐 Deploy lên GitHub Pages
 
 ```bash
-# 1. Tạo repo trên GitHub: blog-lap-trinh-mang
+# 1. Tạo repo trên GitHub: blog-handzvcl-laptrinhmang
 
 # 2. Push code
-git remote add origin https://github.com/<username>/blog-lap-trinh-mang.git
+git remote add origin https://github.com/handzvcl/blog-handzvcl-laptrinhmang.git
 git push -u origin main
 
 # 3. Bật GitHub Pages
 # Settings → Pages → Source: GitHub Actions
 
 # 4. Đợi deploy (tab Actions)
-# Site live tại: https://<username>.github.io/blog-lap-trinh-mang/
+# Site live tại: https://handzvcl.github.io/blog-handzvcl-laptrinhmang/
 ```
 
 ## 🎨 Tùy chỉnh thông tin
@@ -65,7 +65,7 @@ Sửa file `hugo.yaml`:
 
 ```yaml
 # Thay đổi các giá trị sau:
-baseURL: "https://<username>.github.io/blog-lap-trinh-mang/"
+baseURL: "https://handzvcl.github.io/blog-handzvcl-laptrinhmang/"
 
 params:
   author: "Tên của bạn"
