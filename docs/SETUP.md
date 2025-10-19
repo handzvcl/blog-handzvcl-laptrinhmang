@@ -46,8 +46,8 @@ hugo version
 
 ```bash
 # Clone repo
-git clone https://github.com/<username>/blog-lap-trinh-mang.git
-cd blog-lap-trinh-mang
+git clone https://github.com/handzvcl/blog-handzvcl-laptrinhmang.git
+cd blog-handzvcl-laptrinhmang
 
 # Clone theme (git submodule)
 git submodule update --init --recursive
@@ -58,7 +58,7 @@ git submodule update --init --recursive
 ### Cập nhật thông tin trong hugo.yaml
 
 ```yaml
-baseURL: "https://<username>.github.io/blog-lap-trinh-mang/"
+baseURL: "https://handzvcl.github.io/blog-handzvcl-laptrinhmang/"
 title: "Blog Lập Trình Mạng"
 
 params:

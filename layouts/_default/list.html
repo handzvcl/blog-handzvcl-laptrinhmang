@@ -5,6 +5,26 @@
   <div class="container">
     <h1 class="blog-main-title">{{ .Title }}</h1>
     <p class="blog-description">{{ .Description | default .Summary }}</p>
+    
+    <!-- Smart Blog Search -->
+    <div class="blog-search-container">
+      <div class="smart-search-wrapper">
+        <div class="search-input-container">
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="smartSearchInput" class="smart-search-input" placeholder="Tìm kiếm bài viết..." autocomplete="off">
+          <button id="clearSearchBtn" class="clear-search-btn" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div id="searchSuggestions" class="search-suggestions" style="display: none;"></div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -88,7 +108,163 @@
   font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 32px;
+}
+
+/* Smart Blog Search */
+.blog-search-container {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.smart-search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.search-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 25px;
+  padding: 12px 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.search-input-container:focus-within {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.smart-search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0;
+}
+
+.smart-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.clear-search-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  margin-left: 8px;
+}
+
+.clear-search-btn:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Search Suggestions */
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid #e8ecef;
+  margin-top: 8px;
+  max-height: 400px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.search-suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f3f4;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.search-suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.search-suggestion-item:hover {
+  background-color: #f8f9fa;
+}
+
+.search-suggestion-item.active {
+  background-color: #e3f2fd;
+}
+
+.suggestion-thumbnail {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.suggestion-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.suggestion-title {
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+  line-height: 1.3;
+}
+
+.suggestion-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: #6c757d;
+}
+
+.suggestion-date {
+  font-weight: 500;
+}
+
+.suggestion-category {
+  background: rgba(0, 209, 178, 0.1);
+  color: #00d1b2;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.no-suggestions {
+  padding: 20px;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9rem;
 }
 
 /* Blog Content */
@@ -303,6 +479,240 @@
 [data-theme="dark"] .blog-date {
   color: #a0aec0;
 }
+
+/* Dark theme for search */
+[data-theme="dark"] .search-suggestions {
+  background: #2d3748;
+  border-color: #4a5568;
+}
+
+[data-theme="dark"] .search-suggestion-item {
+  border-bottom-color: #4a5568;
+}
+
+[data-theme="dark"] .search-suggestion-item:hover {
+  background-color: #374151;
+}
+
+[data-theme="dark"] .search-suggestion-item.active {
+  background-color: #2b6cb0;
+}
+
+[data-theme="dark"] .suggestion-title {
+  color: #f7fafc;
+}
+
+[data-theme="dark"] .suggestion-meta {
+  color: #cbd5e0;
+}
+
+[data-theme="dark"] .suggestion-category {
+  background: rgba(0, 209, 178, 0.2);
+  color: #00d1b2;
+}
+
+[data-theme="dark"] .no-suggestions {
+  color: #cbd5e0;
+}
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const searchInput = document.getElementById('smartSearchInput');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  const suggestionsContainer = document.getElementById('searchSuggestions');
+  
+  // Blog posts data - sẽ được populate từ Hugo
+  const blogPosts = [
+    {{- $pages := .Pages }}
+    {{- range $index, $page := $pages }}
+    {
+      title: {{ $page.Title | jsonify }},
+      url: {{ $page.Permalink | jsonify }},
+      date: {{ $page.Date.Format "2006-01-02" | jsonify }},
+      category: {{ if $page.Params.categories }}{{ index $page.Params.categories 0 | jsonify }}{{ else }}null{{ end }},
+      summary: {{ $page.Summary | plainify | truncate 100 | jsonify }},
+      thumbnail: {{ if $page.Params.cover.image }}{{ $page.Params.cover.image | replaceRE "^/" "" | absURL | jsonify }}{{ else }}{{ "images/covers/java-networking-overview.jpg" | absURL | jsonify }}{{ end }}
+    }{{ if lt $index (sub (len $pages) 1) }},{{ end }}
+    {{- end }}
+  ];
+  
+  // Debug: Log blog posts data
+  console.log('Blog posts loaded:', blogPosts);
+  console.log('Number of posts:', blogPosts.length);
+  
+  // Test search function immediately
+  if (blogPosts.length > 0) {
+    console.log('Testing search with "java":', searchPosts('java'));
+  }
+  
+  let currentSuggestions = [];
+  let selectedIndex = -1;
+  
+  // Debounce function
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+  
+  // Search function
+  function searchPosts(query) {
+    console.log('Searching for:', query);
+    
+    if (!query.trim()) {
+      console.log('Empty query, returning empty results');
+      return [];
+    }
+    
+    const searchTerm = query.toLowerCase();
+    console.log('Search term:', searchTerm);
+    
+    const results = blogPosts.filter(post => {
+      const titleMatch = post.title.toLowerCase().includes(searchTerm);
+      const summaryMatch = post.summary.toLowerCase().includes(searchTerm);
+      const categoryMatch = post.category && post.category.toLowerCase().includes(searchTerm);
+      
+      console.log(`Post: ${post.title}`, {
+        titleMatch,
+        summaryMatch,
+        categoryMatch,
+        title: post.title,
+        summary: post.summary,
+        category: post.category
+      });
+      
+      return titleMatch || summaryMatch || categoryMatch;
+    });
+    
+    console.log('Search results:', results);
+    
+    // Sort by date (newest first)
+    return results.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }
+  
+  // Display suggestions
+  function displaySuggestions(suggestions) {
+    if (suggestions.length === 0) {
+      suggestionsContainer.innerHTML = '<div class="no-suggestions">Không tìm thấy bài viết nào</div>';
+    } else {
+      suggestionsContainer.innerHTML = suggestions.map((post, index) => `
+        <a href="${post.url}" class="search-suggestion-item" data-index="${index}">
+          <img src="${post.thumbnail}" alt="${post.title}" class="suggestion-thumbnail" onerror="this.src='{{ "images/covers/java-networking-overview.jpg" | absURL }}'">
+          <div class="suggestion-content">
+            <div class="suggestion-title">${post.title}</div>
+            <div class="suggestion-meta">
+              <span class="suggestion-date">${new Date(post.date).toLocaleDateString('vi-VN')}</span>
+              ${post.category ? `<span class="suggestion-category">${post.category}</span>` : ''}
+            </div>
+          </div>
+        </a>
+      `).join('');
+    }
+    
+    suggestionsContainer.style.display = 'block';
+    selectedIndex = -1;
+  }
+  
+  // Hide suggestions
+  function hideSuggestions() {
+    suggestionsContainer.style.display = 'none';
+    selectedIndex = -1;
+  }
+  
+  // Update clear button visibility
+  function updateClearButton() {
+    clearBtn.style.display = searchInput.value.trim() ? 'block' : 'none';
+  }
+  
+  // Debounced search
+  const debouncedSearch = debounce((query) => {
+    const results = searchPosts(query);
+    currentSuggestions = results;
+    displaySuggestions(results);
+  }, 300);
+  
+  // Event listeners
+  searchInput.addEventListener('input', function() {
+    const query = this.value;
+    console.log('Input event triggered, query:', query);
+    updateClearButton();
+    
+    if (query.trim()) {
+      console.log('Calling debounced search');
+      debouncedSearch(query);
+    } else {
+      console.log('Hiding suggestions');
+      hideSuggestions();
+    }
+  });
+  
+  // Clear search
+  clearBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    hideSuggestions();
+    updateClearButton();
+    searchInput.focus();
+  });
+  
+  // Keyboard navigation
+  searchInput.addEventListener('keydown', function(e) {
+    if (suggestionsContainer.style.display === 'none') return;
+    
+    const suggestions = suggestionsContainer.querySelectorAll('.search-suggestion-item');
+    
+    switch(e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        selectedIndex = Math.min(selectedIndex + 1, suggestions.length - 1);
+        updateSelection();
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        selectedIndex = Math.max(selectedIndex - 1, -1);
+        updateSelection();
+        break;
+      case 'Enter':
+        e.preventDefault();
+        if (selectedIndex >= 0 && suggestions[selectedIndex]) {
+          window.location.href = suggestions[selectedIndex].href;
+        }
+        break;
+      case 'Escape':
+        hideSuggestions();
+        break;
+    }
+  });
+  
+  // Update selection highlighting
+  function updateSelection() {
+    const suggestions = suggestionsContainer.querySelectorAll('.search-suggestion-item');
+    suggestions.forEach((item, index) => {
+      item.classList.toggle('active', index === selectedIndex);
+    });
+  }
+  
+  // Hide suggestions when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.smart-search-wrapper')) {
+      hideSuggestions();
+    }
+  });
+  
+  // Focus search input with Ctrl+K
+  document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+});
+</script>
 
 {{ end }}
